@@ -1,8 +1,10 @@
 [Desktop Entry]
 Name=Penguin Eyes
+Name[pl]=Oczy pingwina
 Comment=You are watched!
-Comment[pl]=Jeste∂ obserwowany!
+Comment[pl]=Jeste≈õ obserwowany!
 Icon=penguineyes.png
 Exec=penguineyes --sync
 Terminal=0
 Type=Application
+# vi: encoding=utf-8
