@@ -3,6 +3,6 @@ Name=Penguin Eyes
 Comment=You are watched!
 Comment[pl]=Jeste¶ obserwowany!
 Icon=penguineyes.png
-Exec=penguineyes
+Exec=penguineyes --sync
 Terminal=0
 Type=Application
