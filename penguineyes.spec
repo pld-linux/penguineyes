@@ -33,7 +33,7 @@ który bêdzie obserwowa³ twój kursor.
 
 %build
 rm -f missing
-libtoolize --copy --force
+%{__libtoolize}
 aclocal
 %{__autoconf}
 automake -a -f
