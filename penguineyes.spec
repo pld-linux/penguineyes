@@ -2,7 +2,7 @@ Summary:	You are watched!
 Summary(pl):	Jeste¶ obserwowany!
 Name:		penguineyes
 Version:	0.10
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Amusements
 Source0:	http://ftp.debian.org/debian/pool/main/p/penguineyes/%{name}_%{version}.orig.tar.gz
