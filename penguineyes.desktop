@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Penguin Eyes
+Comment=You are watched!
+Comment[pl]=Jeste¶ obserwowany!
+Icon=penguineyes.png
+Exec=penguineyes
+Terminal=0
+Type=Application
