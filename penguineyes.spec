@@ -6,8 +6,10 @@ Release:	1
 License:	GPL
 Group:		X11/Amusements
 Source0:	http://ftp.debian.org/debian/pool/main/p/penguineyes/%{name}_%{version}.orig.tar.gz
+# Source0-md5:	f17906b904b5e640f06427b81df53f4a
 Source1:	%{name}.desktop
 Source2:	%{name}-bilgejc.tar.gz
+# Source2-md5:	c3c0c4a3dc68e088d76f86dad2f0abfb
 Patch0:		%{name}-time.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
