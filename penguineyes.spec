@@ -35,7 +35,7 @@ który bêdzie obserwowa³ twój kursor.
 rm -f missing
 libtoolize --copy --force
 aclocal
-autoconf
+%{__autoconf}
 automake -a -f
 %{configure} \
 	--disable-gnome
