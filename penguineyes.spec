@@ -18,7 +18,6 @@ BuildRequires:	imlib-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
 PenguinEyes is clone of xeyes. It shows penguin (or something else),
 which will be looking at your cursor.
@@ -36,7 +35,7 @@ rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
-automake -a -f
+%{__automake}
 %{configure} \
 	--disable-gnome
 %{__make}
@@ -50,7 +49,6 @@ install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_applnkdir}/Amusements}
 
 install bilgejc* $RPM_BUILD_ROOT%{_datadir}/penguineyes/Default
 cat penguineyesrc >> $RPM_BUILD_ROOT%{_datadir}/penguineyes/Config/penguineyesrc
-
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Amusements
 install penguinize.png $RPM_BUILD_ROOT%{_pixmapsdir}/penguineyes.png
