@@ -34,7 +34,7 @@ który bêdzie obserwowa³ twój kursor.
 %build
 rm -f missing
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 automake -a -f
 %{configure} \
