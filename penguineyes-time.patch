@@ -1,0 +1,11 @@
+diff -ruN sfdv/src/clock.c penguineyes-0.10.origa/src/clock.c
+--- sfdv/src/clock.c	Wed Nov  3 22:55:57 1999
++++ penguineyes-0.10.origa/src/clock.c	Thu Feb 28 19:58:46 2002
+@@ -20,6 +20,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <sys/time.h>
++#include <time.h>
+ #include <unistd.h>
+ #include <math.h>
+ #include <gtk/gtk.h>
