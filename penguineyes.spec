@@ -51,7 +51,6 @@ install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_applnkdir}/Amusements}
 install bilgejc* $RPM_BUILD_ROOT%{_datadir}/penguineyes/Default
 cat penguineyesrc >> $RPM_BUILD_ROOT%{_datadir}/penguineyes/Config/penguineyesrc
 
-gzip -9nf NEWS README TODO THEMES
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Amusements
 install penguinize.png $RPM_BUILD_ROOT%{_pixmapsdir}/penguineyes.png
@@ -61,7 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc NEWS README TODO THEMES
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/penguineyes
 %{_pixmapsdir}/*
