@@ -1,21 +1,19 @@
 Summary:	You are watched!
 Summary(pl):	Jeste¶ obserwowany!
 Name:		penguineyes
-Version:	0.7
+Version:	0.10
 Release:	1
 License:	GPL
 Group:		X11/Amusements
-# for 0.10
-#Source0:	http://ftp.debian.org/debian/pool/main/p/penguineyes/%{name}_%{version}.orig.tar.gz
-Source0:	%{name}-%{version}.tar.gz
+Source0:	http://ftp.debian.org/debian/pool/main/p/penguineyes/%{name}_%{version}.orig.tar.gz
 Source1:	%{name}.desktop
-Source2:	%{name}.png
-BuildRequires:	gtk+-devel >= 1.2.1
+Source2:	%{name}-bilgejc.tar.gz
+Patch0:		%{name}-time.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	gtk+-devel >= 1.2.6
 BuildRequires:	imlib-devel
-BuildRequires:	libpng-devel
-BuildRequires:	libungif-devel
-BuildRequires:	libtiff-devel
-BuildRequires:	libjpeg-devel
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -30,8 +28,8 @@ PenguinEyes jest klonem xeyes. Pokazuje pingwina (lub co¶ innego),
 który bêdzie obserwowa³ twój kursor.
 
 %prep
-#%setup -q -n %{name}-%{version}.orig
-%setup -q
+%setup -q -a2 -n %{name}-%{version}.orig
+%patch0 -p1
 
 %build
 rm -f missing
@@ -39,20 +37,24 @@ libtoolize --copy --force
 aclocal
 autoconf
 automake -a -f
-%{configure}
+%{configure} \
+	--disable-gnome
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_applnkdir}/Amusements}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
-cp data/robopenguin.png data/tux_colour.xpm data/tux_mask.png data/tux_pupil.png $RPM_BUILD_ROOT%{_datadir}/penguineyes/Default
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf NEWS README TODO
+install bilgejc* $RPM_BUILD_ROOT%{_datadir}/penguineyes/Default
+cat penguineyesrc >> $RPM_BUILD_ROOT%{_datadir}/penguineyes/Config/penguineyesrc
+
+gzip -9nf NEWS README TODO THEMES
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Amusements
-install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
+install penguinize.png $RPM_BUILD_ROOT%{_pixmapsdir}/penguineyes.png
 
 %clean
 rm -rf $RPM_BUILD_ROOT
