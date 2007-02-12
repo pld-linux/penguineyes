@@ -1,5 +1,5 @@
 Summary:	You are watched!
-Summary(pl):	Jeste∂ obserwowany!
+Summary(pl.UTF-8):   Jeste≈õ obserwowany!
 Name:		penguineyes
 Version:	0.10
 Release:	3
@@ -22,9 +22,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 PenguinEyes is clone of xeyes. It shows penguin (or something else),
 which will be looking at your cursor.
 
-%description -l pl
-PenguinEyes jest klonem xeyes. Pokazuje pingwina (lub co∂ innego),
-ktÛry bÍdzie obserwowa≥ twÛj kursor.
+%description -l pl.UTF-8
+PenguinEyes jest klonem xeyes. Pokazuje pingwina (lub co≈õ innego),
+kt√≥ry bƒôdzie obserwowa≈Ç tw√≥j kursor.
 
 %prep
 %setup -q -a2 -n %{name}-%{version}.orig
