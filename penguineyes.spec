@@ -1,5 +1,5 @@
 Summary:	You are watched!
-Summary(pl.UTF-8):   Jesteś obserwowany!
+Summary(pl.UTF-8):	Jesteś obserwowany!
 Name:		penguineyes
 Version:	0.10
 Release:	3
